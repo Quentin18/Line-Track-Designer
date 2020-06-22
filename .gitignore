@@ -12,5 +12,6 @@ __pycache__/
 .coverage
 .coverage.*
 /htmlcov/
-/docs/_build/
+/docs/source/_build/
+/docs/build/
 /.eggs/

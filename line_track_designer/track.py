@@ -1,4 +1,4 @@
-"""
+r"""
 With the **track** module, you can create, import, edit, save, and
 export tracks. A track is represented by two arrays:
 
@@ -11,24 +11,26 @@ of times the tile is rotated by 90 degrees.
 For example, we consider the following matrix:
 
 .. math ::
+
     T =
-    \\begin{pmatrix}
-        3 & 2 & 3\\
-        2 & 11 & 2\\
+    \begin{pmatrix}
+        3 & 2 & 3 \\
+        2 & 11 & 2 \\
         3 & 2 & 3
-    \\end{pmatrix}
+    \end{pmatrix}
 
 .. math ::
+
     O =
-    \\begin{pmatrix}
-        1 & 1 & 0\\
-        0 & 0 & 0\\
-        2 & 1 & 3\\
-    \\end{pmatrix}
+    \begin{pmatrix}
+        1 & 1 & 0 \\
+        0 & 0 & 0 \\
+        2 & 1 & 3 \\
+    \end{pmatrix}
 
 The track associated to this two matrix is:
 
-.. image:: track.png
+.. image:: img/track.png
 
 """
 import numpy as np
@@ -192,11 +194,11 @@ class Track:
 
         With the last example, we obtain:
 
-        .. code-block:: bash
-            >>> print(track)
-            >>> 3;1 2;1 3;0
-                2;0 11;0 2;0
-                3;2 2;1 3;3
+        .. code-block:: text
+
+            3;1 2;1 3;0
+            2;0 11;0 2;0
+            3;2 2;1 3;3
 
         """
         lines = []
