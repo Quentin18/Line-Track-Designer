@@ -8,12 +8,17 @@ from line_track_designer.track import Track
 
 @click.group()
 def linetrack():
+    """Generate line following tracks for robots."""
     pass
 
 
 @linetrack.command()
 @click.argument('filename', type=click.Path(exists=True))
 def show(filename):
+    """Show track FILENAME as PNG file.
+
+    FILENAME is a text file following the track file's conventions.
+    """
     click.echo('Show track')
     track = Track.read(filename)
     track.show()
@@ -24,6 +29,7 @@ def show(filename):
 @click.option('-o', '--output', 'filename_png', default='',
               help='Name of the PNG file')
 def savepng(filename, filename_png):
+    """Save track FILENAME as PNG file."""
     click.echo('Save track')
     track = Track.read(filename)
     if filename_png == '':
@@ -38,6 +44,7 @@ def savepng(filename, filename_png):
 @click.option('-d', '--description', 'description', default='',
               prompt='Description', help='Description of the track')
 def savemd(filename, filename_md, description):
+    """Save track FILENAME as MD file."""
     click.echo('Save track')
     track = Track.read(filename)
     pre, _ = os.path.splitext(filename)
