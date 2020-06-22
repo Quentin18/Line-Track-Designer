@@ -26,7 +26,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     include_package_data=True,
-    install_requires=['numpy'],
+    install_requires=['numpy', 'Click'],
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
@@ -34,4 +34,8 @@ setuptools.setup(
     ],
     setup_requires=['pytest-runner'],
     tests_require='pytest',
+    entry_points='''
+        [console_scripts]
+        linetrack=line_track_designer.__main__:linetrack
+    '''
 )
