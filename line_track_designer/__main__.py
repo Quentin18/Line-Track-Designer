@@ -26,6 +26,23 @@ def show(filename):
 
 @linetrack.command()
 @click.argument('filename', type=click.Path(exists=True))
+def write(filename):
+    """Write track FILENAME in the command prompt."""
+    click.echo('Write track')
+    track = Track.read(filename)
+    click.echo(str(track))
+
+
+@linetrack.command()
+@click.argument('filename', type=click.Path(exists=True))
+def edit(filename):
+    """Edit track FILENAME."""
+    click.echo('Edit track')
+    click.edit(filename=filename)
+
+
+@linetrack.command()
+@click.argument('filename', type=click.Path(exists=True))
 @click.option('-o', '--output', 'filename_png', default='',
               help='Name of the PNG file')
 def savepng(filename, filename_png):
