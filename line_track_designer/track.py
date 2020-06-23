@@ -84,6 +84,7 @@ class Track:
                 lo.append(int(o))
             tiles.append(lt)
             orient.append(lo)
+        print('Reading track: {}'.format(file))
         return Track(
             np.array(tiles, dtype=int),
             np.array(orient, dtype=int), name)
@@ -336,7 +337,7 @@ class Track:
         printer = Printer()
         for i in occur:
             printer.print_page(occur[i], i, self.name)
-        print('The track {} is printed'.format(self.name))
+        print('Printing the track: {}'.format(self.name))
 
     def export_img(self):
         """
@@ -379,7 +380,7 @@ class Track:
         """
         track_img = self.export_img()
         track_img.save(file)
-        print('{} saved'.format(file))
+        print('Saving PNG file: {}'.format(file))
 
     def save_txt(self, file):
         """
@@ -389,7 +390,7 @@ class Track:
         f = open(file, 'w')
         f.write(str(self))
         f.close()
-        print('{} saved'.format(file))
+        print('Saving track: {}'.format(file))
 
     def save_md(self, file, img, description=''):
         """
@@ -425,4 +426,4 @@ class Track:
             occ_array.insert(0, ['Tile number', 'Number of copies required'])
             m.add_table(occ_array)
             m.write('Made with [Line Track Designer]()')
-        print('{} saved'.format(file))
+        print('Saving MD file: {}'.format(file))

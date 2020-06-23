@@ -19,8 +19,8 @@ def show(filename):
 
     FILENAME is a text file following the track file's conventions.
     """
-    click.echo('Show track')
     track = Track.read(filename)
+    click.echo('Showing track: {}'.format(filename))
     track.show()
 
 
@@ -28,8 +28,8 @@ def show(filename):
 @click.argument('filename', type=click.Path(exists=True))
 def write(filename):
     """Write track FILENAME in the command prompt."""
-    click.echo('Write track')
     track = Track.read(filename)
+    click.echo('Writing track: {}'.format(filename))
     click.echo(str(track))
 
 
@@ -37,7 +37,7 @@ def write(filename):
 @click.argument('filename', type=click.Path(exists=True))
 def edit(filename):
     """Edit track FILENAME."""
-    click.echo('Edit track')
+    click.echo('Editing track: {}'.format(filename))
     click.edit(filename=filename)
 
 
@@ -46,10 +46,10 @@ def edit(filename):
 @click.option('-n', default=1, help='Number of rotations')
 def rotate(filename, n):
     """Rotate track FILENAME."""
-    click.echo('Rotate track')
     track = Track.read(filename)
     track.rotate(n)
     track.save_txt(filename)
+    click.echo('Successfully rotated {}'.format(filename))
 
 
 @linetrack.command()
@@ -58,11 +58,12 @@ def rotate(filename, n):
               help='Name of the PNG file')
 def savepng(filename, filename_png):
     """Save track FILENAME as PNG file."""
-    click.echo('Save track')
     track = Track.read(filename)
+    click.echo('Saving PNG file: {}'.format(filename))
     if filename_png == '':
         filename_png = os.path.splitext(filename)[0] + '.png'
     track.save_img(filename_png)
+    click.echo('Successfully saved {}'.format(filename))
 
 
 @linetrack.command()
@@ -75,11 +76,12 @@ def savepng(filename, filename_png):
               prompt='Description', help='Description of the track')
 def savemd(filename, filename_md, name, description):
     """Save track FILENAME as MD file."""
-    click.echo('Save track')
     track = Track.read(filename, name)
+    click.echo('Saving MD file: {}'.format(filename))
     pre, _ = os.path.splitext(filename)
     if filename_md == '':
         filename_md = pre + '.md'
     filename_png = pre + '.png'
     track.save_img(filename_png)
     track.save_md(filename_md, filename_png, description)
+    click.echo('Successfully saved {}'.format(filename))
