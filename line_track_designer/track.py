@@ -1,36 +1,6 @@
-r"""
+"""
 With the **track** module, you can create, import, edit, save, and
-export tracks. A track is represented by two arrays:
-
-* **tiles** contains the number of each tile of the track
-* **orient** indicates the orientation of each tile of the track
-
-A correct orientation is 0, 1, 2 or 3 which corresponds to the number
-of times the tile is rotated by 90 degrees.
-
-For example, we consider the following matrix:
-
-.. math ::
-
-    T =
-    \begin{pmatrix}
-        3 & 2 & 3 \\
-        2 & 11 & 2 \\
-        3 & 2 & 3
-    \end{pmatrix}
-
-.. math ::
-
-    O =
-    \begin{pmatrix}
-        1 & 1 & 0 \\
-        0 & 0 & 0 \\
-        2 & 1 & 3 \\
-    \end{pmatrix}
-
-The track associated to this two matrix is:
-
-.. image:: img/track.png
+export tracks.
 
 """
 import numpy as np
@@ -46,8 +16,8 @@ class Track:
     Representation of a track.
     An instance of the **Track** class is composed of three fields:
 
-    * **tiles**: array which indicates tiles
-    * **orient**: array which indicates orientations
+    * **tiles**: array which contains the number of each tile of the track
+    * **orient**: array which indicates the orientation of each tile
     * **name**: name of the track
 
     """

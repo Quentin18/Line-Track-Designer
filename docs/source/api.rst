@@ -1,10 +1,22 @@
 API
 ===
 
-.. toctree::
+You can use the API of *Line Track Designer* to create tracks with Python scripts.
+This part explains all the classes and methods you can use.
 
-    tile
+The main module is **Track**.
+
+To import *Line Track Designer*:
+
+.. code-block:: Python
+
+    import line_track_designer
+
+.. toctree::
+    :caption: Modules:
+
     track
-    markdown
+    tile
     printer
+    markdown
     error

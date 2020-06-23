@@ -10,7 +10,7 @@ To do that, different **tiles** are used and can be associated like a puzzle.
 This tiles originate from a PDF file and can be printed in A4 format.
 This tiles are squares of 200 mm. They are represented by a number between 2 and 33.
 
-You can see all the tiles here: :download:`pdf <pdf/linefollowtiles.pdf>`
+You can see all the tiles here: :download:`linefollowtiles.pdf <pdf/linefollowtiles.pdf>`
 
 A track is represented by two matrix
 :math:`T` and :math:`O`:
@@ -98,7 +98,7 @@ It will display the track in your picture reader.
 The program asks the name of the track and its description.
 The file ``track.md`` should be created. You can convert the markdown file
 into PDF or HTML. This is the result:
-:download:`pdf <pdf/track.pdf>`
+:download:`track.pdf <pdf/track.pdf>`
 
 You can also create exactly the same files using a Python script with
 the API of *Line Track Designer*:

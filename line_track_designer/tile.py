@@ -1,10 +1,8 @@
 """
 The **tile** module manages the tiles that are used to build a track.
-This tiles originate from a pdf file and can be printed. They are
-represented by a number between 2 and 33. The tiles are squares of 200 mm.
 
-You can see all the tiles `here <https://github.com/Quentin18/
-Line-Track-Designer/blob/master/line_track_designer/pdf/linefollowtiles.pdf>`_.
+You can see all the tiles here:
+:download:`linefollowtiles.pdf <pdf/linefollowtiles.pdf>`
 
 """
 import os
