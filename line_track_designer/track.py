@@ -425,5 +425,6 @@ class Track:
             occ_array = [[i, occ[i]] for i in occ]
             occ_array.insert(0, ['Tile number', 'Number of copies required'])
             m.add_table(occ_array)
-            m.write('Made with [Line Track Designer]()')
+            m.write(('Made with [Line Track Designer]'
+                     '(https://github.com/Quentin18/Line-Track-Designer)'))
         print('Saving MD file: {}'.format(file))
