@@ -18,7 +18,7 @@ Tracks can be created in two different ways:
    :maxdepth: 2
    :caption: Contents:
 
-   installation
+   introduction
    cli
    api
 
