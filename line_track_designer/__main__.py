@@ -34,6 +34,22 @@ def write(filename):
 
 
 @linetrack.command()
+@click.argument('filename', type=click.Path())
+@click.argument('nrow', type=int)
+@click.argument('ncol', type=int)
+def create(filename, nrow, ncol):
+    """Create empty track FILENAME.
+
+    NROW is the number of rows.
+    NCOL is the number of columns.
+    """
+    click.echo('Creating track: {}'.format(filename))
+    track = Track.zeros(nrow, ncol)
+    track.save_txt(filename)
+    click.edit(filename=filename)
+
+
+@linetrack.command()
 @click.argument('filename', type=click.Path(exists=True))
 def edit(filename):
     """Edit track FILENAME."""
@@ -85,3 +101,12 @@ def savemd(filename, filename_md, name, description):
     track.save_img(filename_png)
     track.save_md(filename_md, filename_png, description)
     click.echo('Successfully saved {}'.format(filename))
+
+
+@linetrack.command()
+@click.argument('filename', type=click.Path(exists=True))
+def printing(filename):
+    """Print track FILENAME."""
+    click.echo('Printing track: {}'.format(filename))
+    track = Track.read(filename)
+    track.print_track()
