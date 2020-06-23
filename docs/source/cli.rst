@@ -108,3 +108,37 @@ We can see this PNG image:
 
 Exporting a track
 -----------------
+Once your track is finished, you can export it to easily share it.
+
+First, you can generate and save the PNG file associated to your track using the ``savepng`` command:
+
+.. code-block:: bash
+
+    linetrack savepng [OPTIONS] FILENAME
+
+You can specify the name of the output PNG file using the ``-o`` or ``--output`` option.
+
+For example:
+
+.. code-block:: bash
+
+    linetrack savepng -o track_image.png track.txt
+
+Then, you can create a MARKDOWN file to generate a little documentation of your track.
+To do that, you can use the ``savemd`` command:
+
+.. code-block:: bash
+
+    linetrack savemd [OPTIONS] FILENAME
+
+The following options are available:
+
+.. code-block:: bash
+
+    -o, --output TEXT       Name of the MD file
+    -n, --name TEXT         Name of the track
+    -d, --description TEXT  Description of the track
+
+The MARKDOWN file generated can be exported into PDF and HTML.
+You can see an example of this command
+`here <https://github.com/Quentin18/Line-Track-Designer/blob/master/docs/source/html/track.html/>`_.
