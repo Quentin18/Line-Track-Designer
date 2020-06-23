@@ -43,6 +43,17 @@ def edit(filename):
 
 @linetrack.command()
 @click.argument('filename', type=click.Path(exists=True))
+@click.option('-n', default=1, help='Number of rotations')
+def rotate(filename, n):
+    """Rotate track FILENAME."""
+    click.echo('Rotate track')
+    track = Track.read(filename)
+    track.rotate(n)
+    track.save_txt(filename)
+
+
+@linetrack.command()
+@click.argument('filename', type=click.Path(exists=True))
 @click.option('-o', '--output', 'filename_png', default='',
               help='Name of the PNG file')
 def savepng(filename, filename_png):

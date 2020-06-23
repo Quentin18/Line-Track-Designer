@@ -297,8 +297,8 @@ class Track:
         nrow, ncol = self.orient.shape
         shape = (nrow, ncol) if k % 2 == 0 else (ncol, nrow)
         self._tiles = np.rot90(self.tiles, k)
-        self._orient = (np.rot90(self.orient, k)
-                        + np.ones(shape, dtype=int) * k)
+        self._orient = np.mod(
+            (np.rot90(self.orient, k) + np.ones(shape, dtype=int) * k), 4)
 
     def dimensions(self):
         """
