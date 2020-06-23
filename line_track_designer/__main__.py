@@ -69,12 +69,14 @@ def savepng(filename, filename_png):
 @click.argument('filename', type=click.Path(exists=True))
 @click.option('-o', '--output', 'filename_md', default='',
               help='Name of the MD file')
+@click.option('-n', '--name', 'name', default='Track',
+              prompt='Name', help='Name of the track')
 @click.option('-d', '--description', 'description', default='',
               prompt='Description', help='Description of the track')
-def savemd(filename, filename_md, description):
+def savemd(filename, filename_md, name, description):
     """Save track FILENAME as MD file."""
     click.echo('Save track')
-    track = Track.read(filename)
+    track = Track.read(filename, name)
     pre, _ = os.path.splitext(filename)
     if filename_md == '':
         filename_md = pre + '.md'
