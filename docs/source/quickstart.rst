@@ -7,8 +7,9 @@ The main idea of *Line Track Designer* is to build tracks easily that you can **
 **save**, **share** and **print** with a printer.
 
 To do that, different **tiles** are used and can be associated like a puzzle.
-This tiles originate from a PDF file and can be printed in A4 format.
-This tiles are squares of 200 mm. They are represented by a number between 2 and 33.
+This tiles originate from a PDF file and can be printed in A4 format (or US letter paper).
+They are squares of 200 mm, and are represented by a number between 2 and 33 which corresponds
+to the page number in the PDF file.
 
 You can see all the tiles here: :download:`linefollowtiles.pdf <pdf/linefollowtiles.pdf>`
 
@@ -57,13 +58,13 @@ Create your first track
 -----------------------
 This is how to build the track above with *Line Track Designer*:
 
-1. Create en empty track ``track.txt`` with 3 rows and 3 columns:
+1. Create en empty track ``track.txt`` with 3 rows and 3 columns using this command:
 
 .. code-block:: bash
 
     linetrack create track.txt 3 3
 
-You should arrive in your default text editor with this content:
+You will arrive in your default text editor with this content:
 
 .. code-block:: text
 
@@ -96,7 +97,7 @@ It will display the track in your picture reader.
     linetrack savemd track.txt
 
 The program asks the name of the track and its description.
-The file ``track.md`` should be created. You can convert the markdown file
+The file ``track.md`` will be created. You can convert the markdown file
 into PDF or HTML. This is the result:
 :download:`track.pdf <pdf/track.pdf>`
 

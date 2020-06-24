@@ -16,7 +16,7 @@ The second way to install the library is to clone the GitHub repository and to u
 .. code-block:: bash
 
     git clone https://github.com/Quentin18/Line-Track-Designer.git
-    python setup.py install
+    python3 setup.py install
 
 Running tests
 -------------

@@ -1,14 +1,14 @@
 CLI
 ===
 
-The command line interface of *Line Track Designer* is only available for Linux and Mac OS.
+The command line interface of *Line Track Designer* is available for Linux, macOS and Windows.
 It uses *Click*. To check if you successfully installed the library, you can entry in a command prompt:
 
 .. code-block:: bash
 
     linetrack --help
 
-You should see the following content:
+You will see the following content:
 
 .. code-block:: text
 
@@ -29,6 +29,8 @@ You should see the following content:
     show      Show track FILENAME as PNG file.
     write     Write track FILENAME in the command prompt.
 
+It is the help menu of the CLI. You can see all the commands you can use.
+
 Creating a track
 ----------------
 To create a track, you can use the ``create`` command:
@@ -38,7 +40,7 @@ To create a track, you can use the ``create`` command:
     linetrack create [OPTIONS] FILENAME NROW NCOL
 
 FILENAME must be a text file. You need to indicates the number of rows and columns of the track.
-It creates a track with only blank tiles and open it so you can edit it.
+It creates a track with only blank tiles and open it so that you can edit it.
 
 For example:
 

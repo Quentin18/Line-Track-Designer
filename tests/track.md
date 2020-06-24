@@ -1,6 +1,6 @@
 # Track
 
-![track](/home/quentin/Dropbox/Python Scripts/projets/Line-Track-Designer/tests/track.png)
+![Track](/home/quentin/Dropbox/Python Scripts/projets/Line-Track-Designer/tests/track.png)
 
 ## Dimensions
 Width | Height
@@ -14,4 +14,4 @@ Tile number | Number of copies required
 3 | 4
 11 | 1
 
-Made with [Line Track Designer]()
+Built with [Line Track Designer](https://github.com/Quentin18/Line-Track-Designer)
