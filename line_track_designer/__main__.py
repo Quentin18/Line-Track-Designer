@@ -61,6 +61,44 @@ def edit(filename):
 
 @linetrack.command()
 @click.argument('filename', type=click.Path(exists=True))
+def addcol(filename):
+    """Add a column to track FILENAME."""
+    track = Track.read(filename)
+    track.add_col()
+    track.save_txt(filename)
+
+
+@linetrack.command()
+@click.argument('filename', type=click.Path(exists=True))
+def addrow(filename):
+    """Add a row to track FILENAME."""
+    track = Track.read(filename)
+    track.add_row()
+    track.save_txt(filename)
+
+
+@linetrack.command()
+@click.argument('filename', type=click.Path(exists=True))
+@click.argument('col', type=int)
+def delcol(filename, col):
+    """Delete the column COL from track FILENAME."""
+    track = Track.read(filename)
+    track.del_col(col)
+    track.save_txt(filename)
+
+
+@linetrack.command()
+@click.argument('filename', type=click.Path(exists=True))
+@click.argument('row', type=int)
+def delrow(filename, row):
+    """Delete the column ROW from track FILENAME."""
+    track = Track.read(filename)
+    track.del_row(row)
+    track.save_txt(filename)
+
+
+@linetrack.command()
+@click.argument('filename', type=click.Path(exists=True))
 @click.option('-n', default=1, help='Number of rotations')
 def rotate(filename, n):
     """Rotate track FILENAME."""
