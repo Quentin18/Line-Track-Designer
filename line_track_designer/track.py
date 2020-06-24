@@ -5,6 +5,7 @@ export tracks.
 """
 import numpy as np
 from PIL import Image
+import logging
 from line_track_designer.printer import Printer
 from line_track_designer.tile import Tile, Tiles
 from line_track_designer.error import LineTrackDesignerError
@@ -54,7 +55,7 @@ class Track:
                 lo.append(int(o))
             tiles.append(lt)
             orient.append(lo)
-        print('Reading track: {}'.format(file))
+        logging.info('Reading track: {}'.format(file))
         return Track(
             np.array(tiles, dtype=int),
             np.array(orient, dtype=int), name)
@@ -141,6 +142,7 @@ class Track:
         self._name = name
         self._tiles = tiles.copy()
         self._orient = orient.copy()
+        logging.info('Track created')
 
     @property
     def tiles(self):
@@ -194,6 +196,7 @@ class Track:
         new_col = np.atleast_2d(new_col).T
         self._tiles = np.hstack([self.tiles, new_col])
         self._orient = np.hstack([self.orient, new_col])
+        logging.info('Column added to track')
 
     def add_row(self):
         """
@@ -202,6 +205,7 @@ class Track:
         new_row = np.zeros(self.tiles.shape[1], dtype=int)
         self._tiles = np.vstack([self.tiles, new_row])
         self._orient = np.vstack([self.orient, new_row])
+        logging.info('Row added to track')
 
     def del_col(self, col):
         """
@@ -213,6 +217,7 @@ class Track:
         """
         self._tiles = np.delete(self.tiles, col, axis=1)
         self._orient = np.delete(self.orient, col, axis=1)
+        logging.info('Column deleted from track')
 
     def del_row(self, row):
         """
@@ -224,6 +229,7 @@ class Track:
         """
         self._tiles = np.delete(self.tiles, row, axis=0)
         self._orient = np.delete(self.orient, row, axis=0)
+        logging.info('Row deleted from track')
 
     def set_tile(self, row, col, tile, orient):
         """
@@ -254,6 +260,7 @@ class Track:
                 self.add_col()
         self._tiles[row][col] = tile
         self._orient[row][col] = orient
+        logging.info('Tile ({}, {}) set to track'.format(row, col))
 
     def rotate(self, k=1):
         """
@@ -270,6 +277,7 @@ class Track:
         self._tiles = np.rot90(self.tiles, k)
         self._orient = np.mod(
             (np.rot90(self.orient, k) + np.ones(shape, dtype=int) * k), 4)
+        logging.info('Track rotated {} times'.format(k))
 
     def dimensions(self):
         """
@@ -305,9 +313,9 @@ class Track:
         """
         occur = self.occurences()
         printer = Printer()
+        logging.info('Printing track')
         for i in occur:
             printer.print_page(occur[i], i, self.name)
-        print('Printing the track: {}'.format(self.name))
 
     def export_img(self):
         """
@@ -330,6 +338,7 @@ class Track:
                     current_tile.image.rotate(90*current_orient),
                     (j*SIDE, i*SIDE))
         track_img.thumbnail((SIDE, SIDE), Image.ANTIALIAS)
+        logging.info('Track exported to image')
         return track_img
 
     def show(self):
@@ -339,6 +348,7 @@ class Track:
         """
         track_img = self.export_img()
         track_img.show(title=self.name)
+        logging.info('Showing track')
 
     def save_img(self, file):
         """
@@ -350,7 +360,7 @@ class Track:
         """
         track_img = self.export_img()
         track_img.save(file)
-        print('Saving PNG file: {}'.format(file))
+        logging.info('Track saved as PNG file: {}'.format(file))
 
     def save_txt(self, file):
         """
@@ -360,7 +370,7 @@ class Track:
         f = open(file, 'w')
         f.write(str(self))
         f.close()
-        print('Saving track: {}'.format(file))
+        logging.info('Track saved: {}'.format(file))
 
     def save_md(self, file, img, description=''):
         """
@@ -397,4 +407,4 @@ class Track:
             m.add_table(occ_array)
             m.write(('Built with [Line Track Designer]'
                      '(https://github.com/Quentin18/Line-Track-Designer)'))
-        print('Saving MD file: {}'.format(file))
+        logging.info('Track saved as markdown file: {}'.format(file))

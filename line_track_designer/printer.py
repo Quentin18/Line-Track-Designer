@@ -5,6 +5,7 @@ It uses *CUPS* to print the track.
 """
 import os
 import cups
+import logging
 from line_track_designer.error import LineTrackDesignerError
 
 
@@ -30,6 +31,7 @@ class Printer:
             self._file_tiles = os.path.join(cwd, 'pdf', 'linefollowtiles.pdf')
         else:
             raise LineTrackDesignerError('no printers found')
+        logging.info('Printer found')
 
     @property
     def conn(self):
@@ -71,12 +73,16 @@ class Printer:
             media (str): format (default: 'a4')
 
         """
-        self.conn.printFile(
-            self.printer_name,
-            self.file_tiles,
-            title,
-            {
-                'copies': str(copies),
-                'page-ranges': str(pages),
-                'media': media,
-                'sides': 'one-sided'})
+        try:
+            self.conn.printFile(
+                self.printer_name,
+                self.file_tiles,
+                title,
+                {
+                    'copies': str(copies),
+                    'page-ranges': str(pages),
+                    'media': media,
+                    'sides': 'one-sided'})
+        except Exception:
+            raise LineTrackDesignerError('Printing failed')
+        logging.info('Pages printed')
