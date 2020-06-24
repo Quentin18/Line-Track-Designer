@@ -8,13 +8,13 @@ Tracks can be created in two different ways:
 - with the command line interface (CLI)
 - with the application programming interface in Python (API)
 
-## Installing
-*Line Track Designer* can be installed with [pip](https://pip.pypa.io/en/stable/):
+## Installation
+*Line Track Designer* can be installed using [pip](https://pip.pypa.io/en/stable/):
 ```bash
 pip3 install line_track_designer
 ```
 
-## Usage
+## Quickstart
 For example, we consider a file named ``track.txt``:
 ```
 3;1 2;1 3;0
@@ -64,10 +64,12 @@ track.save_img('track.png')
 track.save_md('track.md', 'track.png', 'Easy track')
 ```
 
+For more details, see the documentation [here]().
+
 ## Links
+- GitHub: https://github.com/Quentin18/Line-Track-Designer
+- PyPI:
 - Documentation:
-- Latest release:
-- Code: https://github.com/Quentin18/Line-Track-Designer
 
 ## Contact
 Quentin Deschamps: quentindeschamps18@gmail.com
