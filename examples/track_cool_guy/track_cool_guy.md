@@ -22,4 +22,4 @@ Tile number | Number of copies required
 13 | 1
 22 | 1
 
-Made with [Line Track Designer](https://github.com/Quentin18/Line-Track-Designer)
+Built with [Line Track Designer](https://github.com/Quentin18/Line-Track-Designer)

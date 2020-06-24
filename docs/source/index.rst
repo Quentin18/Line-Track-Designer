@@ -21,6 +21,7 @@ Tracks can be created in two different ways:
    introduction
    cli
    api
+   examples
 
 GitHub repository: `<https://github.com/Quentin18/Line-Track-Designer/>`_
 
