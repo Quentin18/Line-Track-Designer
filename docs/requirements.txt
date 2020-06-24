@@ -1,0 +1,3 @@
+# Install requirements for docs: pip3 install -r requirements.txt
+Sphinx==3.0.3
+sphinx-rtd-theme
