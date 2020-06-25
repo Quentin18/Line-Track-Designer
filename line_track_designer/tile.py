@@ -6,6 +6,7 @@ You can see all the tiles here:
 
 """
 import os
+import logging
 from PIL import Image
 from line_track_designer.error import LineTrackDesignerError
 
@@ -34,18 +35,17 @@ class Tile:
             number (int): number of a tile
 
         Returns:
-            bool: valid number
+            bool: Is a valid number
 
         """
         return number >= 2 and number < 34 and number not in [10, 32]
 
-    def __init__(self, number, cwd):
+    def __init__(self, number):
         """
         Init a tile.
 
         Args:
             number (int): number of the tile
-            cwd (str): current work directory
 
         Raises:
             LineTrackDesignerError: invalid tile number
@@ -54,10 +54,12 @@ class Tile:
         if Tile.is_valid(number):
             self._number = number
             self._name = 'linefollowtiles-{}.png'.format(str(number).zfill(2))
+            cwd = os.path.dirname(os.path.abspath(__file__))
             self._path = os.path.join(cwd, 'png', self._name)
             self._image = Image.open(self._path)
         else:
             raise LineTrackDesignerError('Tile {} is not valid'.format(number))
+        logging.info('Tile {} created'.format(number))
 
     @property
     def number(self):
@@ -90,6 +92,24 @@ class Tile:
         """
         return str(self)
 
+    def show(self, orient=0):
+        """
+        Show the tile in your picture viewer.
+
+        Args:
+            orient (int): orientation of the tile (default: 0)
+
+        Raises:
+            LineTrackDesignerError: invalid orient value
+
+        """
+        if orient not in [0, 1, 2, 3]:
+            raise LineTrackDesignerError(
+                    '{} is not a valid orient value'.format(orient))
+        img = self.image.rotate(90*orient)
+        img.show(title=self.name)
+        logging.info('Showing tile')
+
 
 class Tiles:
     """
@@ -102,11 +122,11 @@ class Tiles:
         """
         Init the tiles. It creates the dictionary **dict_tiles**.
         """
-        cwd = os.path.dirname(os.path.abspath(__file__))
         self._dict_tiles = {}
         for i in range(2, 34):
             if i not in [10, 32]:
-                self._dict_tiles[i] = Tile(i, cwd)
+                self._dict_tiles[i] = Tile(i)
+        logging.info('Tiles created')
 
     @property
     def dict_tiles(self):

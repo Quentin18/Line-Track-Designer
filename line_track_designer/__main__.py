@@ -5,6 +5,7 @@ import click
 import os
 import logging
 from line_track_designer.track import Track
+from line_track_designer.tile import Tile
 
 
 @click.group()
@@ -144,3 +145,12 @@ def printing(filename):
     """Print track FILENAME."""
     track = Track.read(filename)
     track.print_track()
+
+
+@linetrack.command()
+@click.argument('number', type=int)
+@click.option('-o', '--orient', default=0, help='Orientation')
+def showtile(number, orient):
+    """Show tile NUMBER."""
+    t = Tile(number)
+    t.show(orient)
