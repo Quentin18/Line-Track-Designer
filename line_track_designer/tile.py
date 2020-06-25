@@ -8,6 +8,7 @@ You can see all the tiles here:
 import os
 import logging
 from PIL import Image
+import webbrowser
 from line_track_designer.error import LineTrackDesignerError
 
 
@@ -166,3 +167,20 @@ class Tiles:
         if number in self.dict_tiles:
             return self.dict_tiles[number]
         raise LineTrackDesignerError('tile {} not found'.format(number))
+
+    @staticmethod
+    def show():
+        """
+        Open the PDF file containing the tiles.
+
+        Raises:
+            LineTrackDesignerError: impossible to open the PDF file
+
+        """
+        try:
+            cwd = os.path.dirname(os.path.abspath(__file__))
+            pdf = os.path.join(cwd, 'pdf', 'linefollowtiles.pdf')
+            webbrowser.open_new(pdf)
+            logging.info('Showing the tiles')
+        except FileNotFoundError:
+            raise LineTrackDesignerError('impossible to open the PDF file')

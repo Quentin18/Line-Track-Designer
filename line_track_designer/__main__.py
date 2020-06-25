@@ -5,7 +5,7 @@ import click
 import os
 import logging
 from line_track_designer.track import Track
-from line_track_designer.tile import Tile
+from line_track_designer.tile import Tile, Tiles
 
 
 @click.group()
@@ -154,3 +154,9 @@ def showtile(number, orient):
     """Show tile NUMBER."""
     t = Tile(number)
     t.show(orient)
+
+
+@linetrack.command()
+def pdftiles():
+    """Open the PDF file containing the tiles."""
+    Tiles.show()
