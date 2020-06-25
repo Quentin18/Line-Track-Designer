@@ -1,5 +1,5 @@
-API
-===
+API Reference
+=============
 
 You can use the API of *Line Track Designer* to create tracks with Python scripts.
 This part explains all the classes and methods you can use.

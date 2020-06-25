@@ -83,7 +83,10 @@ def addrow(filename):
 @click.argument('filename', type=click.Path(exists=True))
 @click.argument('col', type=int)
 def delcol(filename, col):
-    """Delete the column COL from track FILENAME."""
+    """Delete column COL from track FILENAME.
+
+    COL is the number of the column to delete.
+    """
     track = Track.read(filename)
     track.del_col(col)
     track.save_txt(filename)
@@ -93,7 +96,10 @@ def delcol(filename, col):
 @click.argument('filename', type=click.Path(exists=True))
 @click.argument('row', type=int)
 def delrow(filename, row):
-    """Delete the column ROW from track FILENAME."""
+    """Delete row ROW from track FILENAME.
+
+    ROW is the number of the row to delete.
+    """
     track = Track.read(filename)
     track.del_row(row)
     track.save_txt(filename)
@@ -144,8 +150,9 @@ def savemd(filename, filename_md, name, description):
 @click.argument('filename', type=click.Path(exists=True))
 def printing(filename):
     """Print track FILENAME."""
-    track = Track.read(filename)
-    track.print_track()
+    if click.confirm('Do you want to print the track?'):
+        track = Track.read(filename)
+        track.print_track()
 
 
 @linetrack.command()
