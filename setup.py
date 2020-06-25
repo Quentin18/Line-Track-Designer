@@ -36,6 +36,6 @@ setuptools.setup(
     tests_require='pytest',
     entry_points='''
         [console_scripts]
-        linetrack=line_track_designer.__main__:linetrack
+        linetrack=line_track_designer.cli:linetrack
     '''
 )
