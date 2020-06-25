@@ -1,6 +1,6 @@
 """
 With the **printer** module, you can print the tracks built with the
-library. This module can be used only on Linux and Mac OS.
+library. This module can be used only on Linux and macOS.
 It uses *CUPS* to print the track.
 """
 import os
@@ -13,7 +13,7 @@ class Printer:
     """
     Manage the printer to print a track. It is composed of three fields:
 
-    * **conn**: connection to the CUPS server
+    * **conn**: connection to the *CUPS* server
     * **printer_name**: the name of the default printer
     * **file_tiles**: the path to the PDF document with the tiles to print
 
@@ -31,7 +31,7 @@ class Printer:
             self._file_tiles = os.path.join(cwd, 'pdf', 'linefollowtiles.pdf')
         else:
             raise LineTrackDesignerError('no printers found')
-        logging.info('Printer found')
+        logging.info('Printer {} found'.format(self.printer_name))
 
     @property
     def conn(self):
@@ -72,6 +72,9 @@ class Printer:
             title (str): name of the printing
             media (str): format (default: 'a4')
 
+        Raises:
+            LineTrackDesignerError: printing failed
+
         """
         try:
             self.conn.printFile(
@@ -84,5 +87,5 @@ class Printer:
                     'media': media,
                     'sides': 'one-sided'})
         except Exception:
-            raise LineTrackDesignerError('Printing failed')
+            raise LineTrackDesignerError('printing failed')
         logging.info('Pages printed')
