@@ -1,6 +1,6 @@
 import os
 from click.testing import CliRunner
-from line_track_designer.__main__ import linetrack
+from line_track_designer.cli import linetrack
 
 
 path = os.path.dirname(os.path.abspath(__file__))
@@ -31,4 +31,11 @@ def test_savemd():
     runner = CliRunner()
     result = runner.invoke(
         linetrack, ['savemd', os.path.join(path, 'track.txt')])
+    assert result.exit_code == 0
+
+
+def test_rotate():
+    runner = CliRunner()
+    result = runner.invoke(
+        linetrack, ['rotate', os.path.join(path, 'track.txt'), '-n', 4])
     assert result.exit_code == 0
