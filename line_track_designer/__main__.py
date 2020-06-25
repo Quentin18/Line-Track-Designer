@@ -4,6 +4,7 @@ Command line interface from Line Track Designer
 import click
 import os
 import logging
+import webbrowser
 from line_track_designer.track import Track
 from line_track_designer.tile import Tile, Tiles
 
@@ -33,7 +34,7 @@ def show(filename):
 def write(filename):
     """Write track FILENAME in the command prompt."""
     track = Track.read(filename)
-    click.echo(str(track))
+    click.echo(track)
     logging.info('Track writed')
 
 
@@ -157,6 +158,14 @@ def showtile(number, orient):
 
 
 @linetrack.command()
-def pdftiles():
+def pdf():
     """Open the PDF file containing the tiles."""
     Tiles.show()
+
+
+@linetrack.command()
+def doc():
+    """Open the documentation."""
+    # TODO change url
+    webbrowser.open('https://github.com/Quentin18/Line-Track-Designer')
+    logging.info('Doc opened')
