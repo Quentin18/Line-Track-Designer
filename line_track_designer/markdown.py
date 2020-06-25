@@ -1,6 +1,6 @@
 """
 The **markdown** module is usefull to export tracks to markdown files.
-The **Markdown** class create a markdown file and can add elements such
+The **Markdown** class creates a markdown file and can add elements such
 as titles, images, and tables.
 
 A markdown file can be edited using the *with* statement.
@@ -13,13 +13,13 @@ class Markdown:
     """
     Create a markdown file. A Markdown object is composed of two fields:
 
-    * filename: string
-    * f: file object
+    * **filename** (str)
+    * **f** (file object)
 
     """
     def __init__(self, filename):
         """
-        Init a markdown file. It creates and open the file.
+        Init a markdown file. It creates and opens the file.
 
         Args:
             filename (str): filename (markdown file)
@@ -83,7 +83,7 @@ class Markdown:
 
         Args:
             file (str): filename of the image to add
-            name (str): default text displayed if the image is not found
+            name (str): label of the image
 
         """
         self.write('![{}]({})'.format(name, os.path.abspath(file)))
