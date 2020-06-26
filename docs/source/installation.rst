@@ -18,6 +18,18 @@ The second way to install the library is to clone the GitHub repository and to u
     git clone https://github.com/Quentin18/Line-Track-Designer.git
     python3 setup.py install
 
+Installing on Windows
+---------------------
+On Windows, you can install the library with the two methods above.
+But, you probably will see the warning bellow:
+
+.. code-block:: bash
+
+    The script linetrack.exe is installed in 'C:\Users\...' which is not on PATH.
+
+To fix this warning, add the path indicated in the message to the PATH. You can follow the tutorial
+`here <https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/>`_.
+
 Running tests
 -------------
 If you cloned the repository, the tests can be run using:
