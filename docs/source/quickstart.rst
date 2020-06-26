@@ -127,6 +127,7 @@ the API of *Line Track Designer*:
 
     # Save the track
     track.save_txt('track.txt')
+    # Make png file
     track.save_img('track.png')
     # Make markdown file
-    track.save_md('track.md', 'track.png', 'Easy track')
+    track.save_md('track.md', 'Easy track')

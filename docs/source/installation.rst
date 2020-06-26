@@ -30,6 +30,15 @@ But, you probably will see the warning bellow:
 To fix this warning, add the path indicated in the message to the PATH. You can follow the tutorial
 `here <https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/>`_.
 
+Markdown editor
+---------------
+If you do not have any markdown editor, you can download `Zettlr <https://www.zettlr.com/>`_.
+It is very usefull to see markdown files built with *Line Track Designer*. In addition, to convert
+markdown files into PDF files, you need to install:
+
+* `Pandoc <https://pandoc.org/installing.html>`_
+* `MiKTeX <https://miktex.org/download>`_
+
 Running tests
 -------------
 If you cloned the repository, the tests can be run using:

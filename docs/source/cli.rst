@@ -151,7 +151,8 @@ First, you can generate and **save the PNG file associated to your track** using
 
     linetrack savepng [OPTIONS] FILENAME
 
-You can specify the name of the output PNG file using the ``-o`` or ``--output`` option.
+You can specify the name of the output PNG file using the ``-o`` or ``--output`` option. You can also
+open the PNG file using the ``-s`` or ``--show`` command.
 
 For example:
 
