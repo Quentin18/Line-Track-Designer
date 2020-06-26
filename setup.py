@@ -14,28 +14,41 @@ with open('README.md', 'r') as fh:
 setuptools.setup(
     name='line-track-designer',
     version='0.0.1',
+    description='A library to design line following tracks for robots',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author='Quentin Deschamps',
     author_email='quentindeschamps18@gmail.com',
-    description='A library to design line following tracks for robots',
-    keywords='line follow robot track',
-    license='MIT',
-    url='https://github.com/Quentin18/Line-Track-Designer',
+    url='https://github.com/Quentin18/Line-Track-Designer/',
     packages=['line_track_designer'],
-    platforms='any',
-    python_requires='>=3',
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    include_package_data=True,
-    install_requires=['numpy', 'Click'],
     classifiers=[
-        'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
         'Operating System :: OS Independent',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Topic :: Education',
+        'Topic :: Scientific/Engineering'
     ],
-    setup_requires=['pytest-runner'],
-    tests_require='pytest',
+    license='MIT',
+    keywords='robotics line follow robot track',
+    project_urls={
+        'Documentation': '',
+        'Travis': '',
+        'Source Code': 'https://github.com/Quentin18/Line-Track-Designer/',
+    },
+    platforms=['any'],
+    include_package_data=True,
+    zip_safe=True,
+    install_requires=['numpy', 'Click', 'Pillow', 'cups'],
     entry_points='''
         [console_scripts]
         linetrack=line_track_designer.cli:linetrack
-    '''
+    ''',
+    python_requires='>=3',
+    setup_requires=['pytest-runner'],
+    tests_require='pytest'
 )
