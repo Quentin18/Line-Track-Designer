@@ -1,5 +1,5 @@
 """
-Example 5
+Example 5: Create a track with zeros
 """
 from line_track_designer.track import Track
 

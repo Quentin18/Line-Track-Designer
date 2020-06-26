@@ -1,5 +1,5 @@
 """
-Example 3
+Example 3: Importation, exportation and show a track
 """
 from line_track_designer.track import Track
 

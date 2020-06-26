@@ -1,5 +1,5 @@
 """
-Example 4
+Example 4: Edition functions
 """
 from line_track_designer.track import Track
 

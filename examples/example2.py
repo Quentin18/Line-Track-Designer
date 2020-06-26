@@ -1,5 +1,5 @@
 """
-Example 2
+Example 2: Importation of a track and exportation to PNG and MD
 """
 from line_track_designer.track import Track
 

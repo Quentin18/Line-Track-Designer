@@ -1,5 +1,5 @@
 """
-Example 1
+Example 1: Creation of a track with arrays and exportation to PNG an MD
 """
 import os
 import numpy as np
@@ -15,7 +15,8 @@ if __name__ == "__main__":
     tiles = np.array([
         [3, 2, 3],
         [2, 11, 2],
-        [3, 2, 3]])
+        [3, 2, 3]
+    ])
     orient = np.array([
         [1, 1, 0],
         [0, 0, 0],
