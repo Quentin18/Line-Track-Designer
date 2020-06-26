@@ -1,6 +1,6 @@
 # Test track
 
-![Test track](/home/quentin/Dropbox/Python Scripts/projets/Line-Track-Designer/examples/track_test/track.png)
+![Test track](track.png)
 
 ## Description
 

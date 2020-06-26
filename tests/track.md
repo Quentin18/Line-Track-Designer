@@ -1,6 +1,6 @@
 # Track
 
-![Track](/home/quentin/Dropbox/Python Scripts/projets/Line-Track-Designer/tests/track.png)
+![Track](track.png)
 
 ## Dimensions
 Width | Height

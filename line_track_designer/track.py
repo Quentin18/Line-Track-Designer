@@ -3,6 +3,7 @@ With the **track** module, you can create, import, edit, save, and
 export tracks.
 
 """
+from pathlib import Path
 import numpy as np
 from PIL import Image
 import logging
@@ -37,12 +38,17 @@ class Track:
 
         Raises:
             LineTrackDesignerError: file not found
+            LineTrackDesignerError: bad filename extension: requires .txt
 
         """
         try:
             f = open(file, 'r')
         except IOError:
             raise LineTrackDesignerError('file {} not found'.format(file))
+        p = Path(file)
+        if p.suffix != '.txt':
+            raise LineTrackDesignerError(
+                    'bad filename extension: requires .txt')
         lines = f.readlines()
         f.close()
         tiles, orient = [], []
@@ -357,7 +363,13 @@ class Track:
         Args:
             file (str): filename
 
+        Raises:
+            LineTrackDesignerError: bad filename extension: use .png
+
         """
+        p = Path(file)
+        if p.suffix != '.png':
+            raise LineTrackDesignerError('bad filename extension: use .png')
         track_img = self.export_img()
         track_img.save(file)
         logging.info('Track saved as PNG file: {}'.format(file))
@@ -366,16 +378,27 @@ class Track:
         """
         Save the track as a text file. The content of the text
         file corresponds to the string format of the track.
+
+        Args:
+            file (str): filename
+
+        Raises:
+            LineTrackDesignerError: bad filename extension: use .txt
+
         """
+        p = Path(file)
+        if p.suffix != '.txt':
+            raise LineTrackDesignerError('bad filename extension: use .txt')
         f = open(file, 'w')
         f.write(str(self))
         f.close()
         logging.info('Track saved: {}'.format(file))
 
-    def save_md(self, file, img, description=''):
+    def save_md(self, file, description=''):
         """
-        Save the track as a markdown file. The md file contains the
-        following informtions :
+        Save the track as a markdown file. It also creates the PNG image
+        associated to the track. The md file contains the following
+        informtions:
 
         * name of the track
         * PNG image of the track
@@ -385,13 +408,20 @@ class Track:
 
         Args:
             file (str): filename (markdown file)
-            img (str): filename of the image of the track
             description (str): description of the track
 
+        Raises:
+            LineTrackDesignerError: bad extension file: use .md
+
         """
+        p = Path(file)
+        if p.suffix != '.md':
+            raise LineTrackDesignerError('bad extension file: use .md')
         with Markdown(file) as m:
             m.add_title(self.name, 1)
-            m.add_image(img, self.name)
+            img = p.with_suffix('.png')
+            self.save_img(img)
+            m.add_image(img.name, self.name)
             if description != '':
                 m.add_title('description', 2)
                 m.write(description)

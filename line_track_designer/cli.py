@@ -2,7 +2,7 @@
 Command line interface from Line Track Designer
 """
 import click
-import os
+from pathlib import Path
 import logging
 import webbrowser
 from line_track_designer.track import Track
@@ -119,12 +119,16 @@ def rotate(filename, n):
 @click.argument('filename', type=click.Path(exists=True))
 @click.option('-o', '--output', 'filename_png', default='',
               help='Name of the PNG file')
-def savepng(filename, filename_png):
+@click.option('-s', '--show', is_flag=True, help='Show the file created')
+def savepng(filename, filename_png, show):
     """Save track FILENAME as PNG file."""
     track = Track.read(filename)
+    p = Path(filename)
     if filename_png == '':
-        filename_png = os.path.splitext(filename)[0] + '.png'
+        filename_png = p.with_suffix('.png')
     track.save_img(filename_png)
+    if show:
+        track.show()
 
 
 @linetrack.command()
@@ -138,12 +142,10 @@ def savepng(filename, filename_png):
 def savemd(filename, filename_md, name, description):
     """Save track FILENAME as MD file."""
     track = Track.read(filename, name)
-    pre, _ = os.path.splitext(filename)
+    p = Path(filename)
     if filename_md == '':
-        filename_md = pre + '.md'
-    filename_png = pre + '.png'
-    track.save_img(filename_png)
-    track.save_md(filename_md, filename_png, description)
+        filename_md = p.with_suffix('.md')
+    track.save_md(filename_md, description)
 
 
 @linetrack.command()

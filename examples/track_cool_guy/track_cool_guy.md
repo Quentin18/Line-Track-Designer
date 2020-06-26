@@ -1,6 +1,6 @@
 # Cool guy track
 
-![Cool guy track](/home/quentin/Dropbox/Python Scripts/projets/Line-Track-Designer/examples/track_cool_guy/track_cool_guy.png)
+![Cool guy track](track_cool_guy.png)
 
 ## Description
 

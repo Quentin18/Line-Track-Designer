@@ -29,4 +29,4 @@ if __name__ == "__main__":
     # Save the track
     track.save_txt('track_test/track.txt')
     track.save_img('track_test/track.png')
-    track.save_md('track_test/track.md', 'track_test/track.png', 'Easy track')
+    track.save_md('track_test/track.md', 'Easy track')

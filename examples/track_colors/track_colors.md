@@ -1,6 +1,6 @@
 # Colors track
 
-![Colors track](/home/quentin/Dropbox/Python Scripts/projets/Line-Track-Designer/examples/track_colors/track_colors.png)
+![Colors track](track_colors.png)
 
 ## Description
 

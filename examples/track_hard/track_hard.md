@@ -1,6 +1,6 @@
 # Hard track
 
-![Hard track](/home/quentin/Dropbox/Python Scripts/projets/Line-Track-Designer/examples/track_hard/track_hard.png)
+![Hard track](track_hard.png)
 
 ## Description
 

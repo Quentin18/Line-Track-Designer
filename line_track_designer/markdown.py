@@ -6,7 +6,6 @@ as titles, images, and tables.
 A markdown file can be edited using the *with* statement.
 
 """
-import os
 
 
 class Markdown:
@@ -86,7 +85,7 @@ class Markdown:
             name (str): label of the image
 
         """
-        self.write('![{}]({})'.format(name, os.path.abspath(file)))
+        self.write('![{}]({})'.format(name, file))
 
     def add_separator(self):
         """Add a separator to the file."""

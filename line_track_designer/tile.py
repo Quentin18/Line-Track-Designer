@@ -174,7 +174,7 @@ class Tiles:
         Open the PDF file containing the tiles.
 
         Raises:
-            LineTrackDesignerError: impossible to open the PDF file
+            LineTrackDesignerError: unable to open the PDF file
 
         """
         try:
@@ -183,4 +183,4 @@ class Tiles:
             webbrowser.open_new(pdf)
             logging.info('Showing the tiles')
         except FileNotFoundError:
-            raise LineTrackDesignerError('impossible to open the PDF file')
+            raise LineTrackDesignerError('unable to open the PDF file')
