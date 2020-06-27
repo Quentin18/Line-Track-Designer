@@ -1,7 +1,10 @@
 """
 With the **printer** module, you can print the tracks built with the
-library. This module can be used only on Linux and macOS.
-It uses *CUPS* to print the track.
+library. It uses *CUPS* to print the track.
+
+Warnings:
+    This module can be used only on Linux and macOS.
+
 """
 import os
 import cups
@@ -19,6 +22,9 @@ class Printer:
 
     Raises:
         LineTrackDesignerError: no printers found
+
+    Note:
+        If no printer is found, you need to add one in your devices.
 
     """
     def __init__(self):

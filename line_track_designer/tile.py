@@ -1,8 +1,9 @@
 """
 The **tile** module manages the tiles that are used to build a track.
 
-You can see all the tiles here:
-:download:`linefollowtiles.pdf <pdf/linefollowtiles.pdf>`
+Note:
+    You can see all the tiles here:
+    :download:`linefollowtiles.pdf <pdf/linefollowtiles.pdf>`
 
 """
 import os
