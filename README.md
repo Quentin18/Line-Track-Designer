@@ -1,4 +1,5 @@
 # Line Track Designer
+[![Build Status](https://travis-ci.org/Quentin18/Line-Track-Designer.svg?branch=master)](https://travis-ci.org/Quentin18/Line-Track-Designer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 *Line Track Designer* is a library to design line following tracks for robots. With this tool, you can easily **edit**, **save**, **share** and **print** your tracks with a printer.
@@ -73,7 +74,7 @@ For more details, see the documentation [here]().
 - GitHub: https://github.com/Quentin18/Line-Track-Designer/
 - PyPI: https://pypi.org/project/line-track-designer/
 - Documentation:
-- Travis:
+- Travis: https://travis-ci.org/github/Quentin18/Line-Track-Designer/
 - PDF file's author: http://robotsquare.com/
 
 ## Author
