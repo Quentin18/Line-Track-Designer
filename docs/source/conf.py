@@ -73,5 +73,6 @@ autodoc_mock_imports = [
     'numpy',
     'Click',
     'Pillow',
-    'pycups'
+    'pycups',
+    'cups'
 ]
