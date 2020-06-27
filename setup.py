@@ -43,7 +43,7 @@ setuptools.setup(
     platforms=['any'],
     include_package_data=True,
     zip_safe=True,
-    install_requires=['numpy', 'Click', 'Pillow', 'cups'],
+    install_requires=['numpy', 'Click', 'Pillow', 'pycups'],
     entry_points='''
         [console_scripts]
         linetrack=line_track_designer.cli:linetrack

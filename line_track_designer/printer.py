@@ -94,4 +94,4 @@ class Printer:
                     'sides': 'one-sided'})
         except Exception:
             raise LineTrackDesignerError('printing failed')
-        logging.info('Pages printed')
+        logging.info('Pages {} printed'.format(pages))
