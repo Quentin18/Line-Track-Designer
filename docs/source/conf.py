@@ -31,7 +31,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx_rtd_theme',
-    'sphinx.ext.mathjax']
+    'sphinx.ext.mathjax'
+]
 
 # Napoleon settings
 napoleon_google_docstring = True
@@ -67,4 +68,10 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 # html_static_path = ['_static']
 
-autodoc_mock_imports = ['pycups', 'cups']
+autodoc_mock_imports = [
+    'line_track_designer',
+    'numpy',
+    'Click',
+    'Pillow',
+    'pycups'
+]
