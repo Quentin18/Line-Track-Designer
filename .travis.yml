@@ -50,11 +50,11 @@ jobs:
 before_install:
   - python3 --version || python --version
   - pip3 install --upgrade pip
+  - git clone https://github.com/OpenPrinting/pycups.git
+  - make -f pycups/Makefile
+  - sudo make install -f pycups/Makefile
 
 install:
-  - git clone https://github.com/OpenPrinting/pycups.git
-  - make
-  - sudo make install
   - pip3 install .
 
 script:
