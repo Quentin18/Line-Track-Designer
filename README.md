@@ -1,4 +1,5 @@
 # Line Track Designer
+[![Documentation Status](https://readthedocs.org/projects/line-track-designer/badge/?version=latest)](https://line-track-designer.readthedocs.io/en/latest/?badge=latest)
 [![Build Status](https://travis-ci.org/Quentin18/Line-Track-Designer.svg?branch=master)](https://travis-ci.org/Quentin18/Line-Track-Designer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -68,12 +69,12 @@ track.save_img('track.png')
 track.save_md('track.md', 'Easy track')
 ```
 
-For more details, see the documentation [here]().
+For more details, see the documentation [here](https://line-track-designer.readthedocs.io/en/latest/).
 
 ## Links
 - GitHub: https://github.com/Quentin18/Line-Track-Designer/
 - PyPI: https://pypi.org/project/line-track-designer/
-- Documentation:
+- Documentation: https://line-track-designer.readthedocs.io/en/latest/
 - Travis: https://travis-ci.org/github/Quentin18/Line-Track-Designer/
 - PDF file's author: http://robotsquare.com/
 

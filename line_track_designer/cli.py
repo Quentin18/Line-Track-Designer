@@ -175,6 +175,5 @@ def pdf():
 @linetrack.command()
 def doc():
     """Open the documentation."""
-    # TODO change url
-    webbrowser.open('https://github.com/Quentin18/Line-Track-Designer')
+    webbrowser.open('https://line-track-designer.readthedocs.io/en/latest/')
     logging.info('Doc opened')

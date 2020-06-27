@@ -34,8 +34,10 @@ setuptools.setup(
     license='MIT',
     keywords='robotics line follow robot track',
     project_urls={
-        'Documentation': '',
-        'Travis': '',
+        'Documentation':
+        'https://line-track-designer.readthedocs.io/en/latest/',
+        'Travis':
+        'https://travis-ci.org/github/Quentin18/Line-Track-Designer/',
         'Source Code': 'https://github.com/Quentin18/Line-Track-Designer/',
     },
     platforms=['any'],
