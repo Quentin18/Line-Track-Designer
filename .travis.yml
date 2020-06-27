@@ -15,7 +15,6 @@ before_install:
   - pip3 install --upgrade pip
   - sudo apt-get install cups
   - sudo apt-get install libcups2-dev
-  - pip3 install pycups
 
 install:
   - pip3 install .
