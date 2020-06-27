@@ -38,7 +38,7 @@ You can also generate documentation for your track using this command:
 linetrack savemd track.txt
 ```
 
-It generates a markdown file with informations about the track. You can see an example [here](docs/source/pdf/track.pdf).
+It generates a markdown file with informations about the track. You can see an example [here](https://github.com/Quentin18/Line-Track-Designer/blob/master/docs/source/pdf/track.pdf).
 
 You can also use the API to create tracks:
 ```python
