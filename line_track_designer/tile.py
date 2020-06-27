@@ -5,6 +5,9 @@ Note:
     You can see all the tiles here:
     :download:`linefollowtiles.pdf <pdf/linefollowtiles.pdf>`
 
+Warnings:
+    The tiles 10 and 32 can not be used by *Line Track Designer*.
+
 """
 import os
 import logging
@@ -30,7 +33,7 @@ class Tile:
     def is_valid(number):
         """
         Return True if the number corresponds to a valid tile.
-        It's valid if the number is between 2 and 33, and the tiles
+        It is valid if the number is between 2 and 33, and the tiles
         10 and 32 are invalid.
 
         Args:

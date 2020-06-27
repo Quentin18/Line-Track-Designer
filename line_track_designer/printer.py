@@ -1,6 +1,6 @@
 """
 With the **printer** module, you can print the tracks built with the
-library. It uses *CUPS* to print the track.
+library. It uses *CUPS*.
 
 Warnings:
     This module can be used only on Linux and macOS.

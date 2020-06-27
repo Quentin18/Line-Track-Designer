@@ -8,10 +8,12 @@ Tracks can be created in two different ways:
 - with the command line interface (CLI)
 - with the application programming interface in Python (API)
 
+It uses a PDF file containing tiles to build tracks: [PDF](https://github.com/Quentin18/Line-Track-Designer/blob/master/line_track_designer/pdf/linefollowtiles.pdf)
+
 ## Installation
 *Line Track Designer* can be installed using [pip](https://pip.pypa.io/en/stable/):
 ```bash
-pip3 install line_track_designer
+pip3 install line-track-designer
 ```
 
 ## Quickstart
@@ -22,7 +24,7 @@ For example, we consider a file named ``track.txt``:
 3;2 2;1 3;3
 ```
 This file represents the following track:
-![Track](https://github.com/Quentin18/Line-Track-Designer/blob/master/docs/source/img/track.png)
+![Track Image](https://github.com/Quentin18/Line-Track-Designer/blob/master/docs/source/img/track.png)
 
 This picture can be obtained with the following command:
 ```bash
@@ -68,9 +70,11 @@ track.save_md('track.md', 'Easy track')
 For more details, see the documentation [here]().
 
 ## Links
-- GitHub: https://github.com/Quentin18/Line-Track-Designer
-- PyPI:
+- GitHub: https://github.com/Quentin18/Line-Track-Designer/
+- PyPI: https://pypi.org/project/line-track-designer/
 - Documentation:
+- Travis:
+- PDF file's author: http://robotsquare.com/
 
 ## Author
 Quentin Deschamps: quentindeschamps18@gmail.com

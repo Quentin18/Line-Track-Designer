@@ -3,11 +3,11 @@ Installation
 
 Using pip
 ---------
-You can install latest release of the *Line Track Designer* library with ``pip3``:
+You can install latest release of the *Line Track Designer* library using ``pip3``:
 
 .. code-block:: bash
 
-    pip3 install line_track_designer
+    pip3 install line-track-designer
 
 Using setuptools
 ----------------

@@ -113,7 +113,8 @@ class Track:
             tiles = np.array([
                 [3, 2, 3],
                 [2, 11, 2],
-                [3, 2, 3]])
+                [3, 2, 3]
+            ])
             orient = np.array([
                 [1, 1, 0],
                 [0, 0, 0],
@@ -215,7 +216,7 @@ class Track:
 
     def del_col(self, col):
         """
-        Delete a column of the track.
+        Delete a column from the track.
 
         Args:
             col (int): index of the column to delete
@@ -227,7 +228,7 @@ class Track:
 
     def del_row(self, row):
         """
-        Delete a row of the track.
+        Delete a row from the track.
 
         Args:
             row (int): index of the row to delete

@@ -39,6 +39,12 @@ You will see the following content:
 
 It is the help menu of the CLI. You can see all the commands you can use.
 
+You can open the documentation using this command:
+
+.. code-block:: bash
+
+    linetrack doc [OPTIONS]
+
 Creating a track
 ----------------
 To **create a track**, you can use the ``create`` command:
@@ -192,7 +198,7 @@ with your printer using the ``printing`` command:
 
 .. code-block:: bash
 
-    linetrack printing [OPTIONS]
+    linetrack printing [OPTIONS] FILENAME
 
 
 Showing the tiles

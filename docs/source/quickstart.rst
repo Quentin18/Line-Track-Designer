@@ -97,8 +97,8 @@ It will display the track in your picture reader.
     linetrack savemd track.txt
 
 The program asks the name of the track and its description.
-The file ``track.md`` will be created. You can convert the markdown file
-into PDF or HTML. This is the result:
+The files ``track.png`` and ``track.md`` will be created.
+You can convert the markdown file into PDF or HTML. This is the result:
 :download:`track.pdf <pdf/track.pdf>`
 
 You can also create exactly the same files using a Python script with

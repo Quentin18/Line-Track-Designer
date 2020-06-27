@@ -6,7 +6,7 @@ as titles, images, and tables.
 A markdown file can be edited using the *with* statement.
 
 Note:
-    You can read markdown files using Zettlr.
+    You can read markdown files using *Zettlr*.
 
 """
 
