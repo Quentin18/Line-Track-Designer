@@ -7,8 +7,11 @@ Warnings:
 
 """
 import os
-import cups
 import logging
+try:
+    import cups
+except ImportError:
+    pass
 from line_track_designer.error import LineTrackDesignerError
 
 
@@ -29,15 +32,19 @@ class Printer:
     """
     def __init__(self):
         """Init a Printer object."""
-        self._conn = cups.Connection()
-        printers = self._conn.getPrinters()
-        if printers:
-            self._printer_name = list(printers.keys())[0]
-            cwd = os.path.dirname(os.path.abspath(__file__))
-            self._file_tiles = os.path.join(cwd, 'pdf', 'linefollowtiles.pdf')
-        else:
-            raise LineTrackDesignerError('no printers found')
-        logging.info('Printer {} found'.format(self.printer_name))
+        try:
+            self._conn = cups.Connection()
+            printers = self._conn.getPrinters()
+            if printers:
+                self._printer_name = list(printers.keys())[0]
+                cwd = os.path.dirname(os.path.abspath(__file__))
+                self._file_tiles = os.path.join(
+                    cwd, 'pdf', 'linefollowtiles.pdf')
+            else:
+                raise LineTrackDesignerError('no printers found')
+            logging.info('Printer {} found'.format(self.printer_name))
+        except ImportError:
+            pass
 
     @property
     def conn(self):

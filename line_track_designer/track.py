@@ -318,11 +318,14 @@ class Track:
         """
         Ask the printer to print the tiles to build the track.
         """
-        occur = self.occurences()
-        printer = Printer()
-        logging.info('Printing track')
-        for i in occur:
-            printer.print_page(occur[i], i, self.name)
+        try:
+            occur = self.occurences()
+            printer = Printer()
+            logging.info('Printing track')
+            for i in occur:
+                printer.print_page(occur[i], i, self.name)
+        except Exception:
+            raise LineTrackDesignerError('unable to print the track')
 
     def export_img(self):
         """
