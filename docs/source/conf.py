@@ -71,8 +71,8 @@ html_theme = 'sphinx_rtd_theme'
 autodoc_mock_imports = [
     'line_track_designer',
     'numpy',
-    'Click',
-    'Pillow',
+    'click',
+    'PIL',
     'pycups',
     'cups'
 ]
